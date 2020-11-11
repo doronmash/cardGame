@@ -35,7 +35,7 @@
         </FrameLayout>
 
         <ImageView
-            android:id="@+id/game_img_card_1"
+            android:id="@+id/game_IMG_card_1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -43,7 +43,7 @@
             />
 
         <ImageView
-            android:id="@+id/game_img_card_2"
+            android:id="@+id/game_IMG_card_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -76,7 +76,7 @@
         android:gravity="bottom">
 
         <TextView
-            android:id="@+id/game_txt_scoreRight"
+            android:id="@+id/game_LBL_scoreRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -84,7 +84,7 @@
             android:layout_weight="0.5"/>
 
         <TextView
-            android:id="@+id/game_txt_scoreLeft"
+            android:id="@+id/game_LBL_scoreLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -96,7 +96,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/mian_btn_play"
+        android:id="@+id/game_BTN_play"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="bottom|center_horizontal"

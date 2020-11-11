@@ -25,12 +25,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        play = findViewById(R.id.mian_btn_play);
+        play = findViewById(R.id.game_BTN_play);
         play.setOnClickListener(onClickListener);
-        rightScore = findViewById(R.id.game_txt_scoreLeft);
-        leftScore = findViewById(R.id.game_txt_scoreRight);
-        leftCardImg = findViewById(R.id.game_img_card_1);
-        rightCardImg = findViewById(R.id.game_img_card_2);
+        rightScore = findViewById(R.id.game_LBL_scoreLeft);
+        leftScore = findViewById(R.id.game_LBL_scoreRight);
+        leftCardImg = findViewById(R.id.game_IMG_card_1);
+        rightCardImg = findViewById(R.id.game_IMG_card_2);
 
         cardsDeck = new CardsDeck();
         cardsDeck.shuffle();
@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
-                case R.id.mian_btn_play:
+                case R.id.game_BTN_play:
                     if (rightPlayerScore + leftPlayerScore + draws == 26)
                         openActivity(MainActivity.this);
                     else {
@@ -101,6 +101,8 @@ public class MainActivity extends Activity {
 
     private void openActivity(Activity activity) {
         Intent myIntent = new Intent(activity, Winner_Activity.class);
+        myIntent.putExtra("LEFT_SCORE",String.valueOf(leftScore.getText()));
+        myIntent.putExtra("RIGHT_SCORE",String.valueOf(rightScore.getText()));
         startActivity(myIntent);
     }
 
