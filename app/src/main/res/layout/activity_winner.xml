@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background_green"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Winner_Activity">
+
+<ImageView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:src="@drawable/background"
+android:alpha="0.45"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Winner"
+        android:textColor="@color/white"
+        android:layout_marginLeft="27mm"
+        android:textStyle="bold"
+        android:layout_marginTop="10mm"
+        android:textSize="5mm"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loser"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="10mm"
+        android:layout_marginLeft="25mm"
+        android:textSize="5mm"/>
+    </LinearLayout>
+
+</FrameLayout>

@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.CardGame">
+        <activity android:name=".Winner_Activity"></activity>
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape"
-            android:label="@string/my_app">
-
+            android:label="@string/my_app"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
