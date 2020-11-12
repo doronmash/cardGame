@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Winner_Activity extends AppCompatActivity {
+public class WinnerActivity extends AppCompatActivity {
     private ImageView winnerLeft;
     private ImageView winnerRight;
     private ImageView draw;
@@ -20,14 +21,12 @@ public class Winner_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_winner);
-        try
-        {
+        try {
             this.getSupportActionBar().hide();
-        }
-        catch (NullPointerException e){
+        } catch (NullPointerException e) {
 
-        setContentView(R.layout.activity_main);
-    }
+            setContentView(R.layout.activity_main);
+        }
 
         winnerLeft = findViewById(R.id.winner_IMG_winnerLeft);
         winnerRight = findViewById(R.id.winner_IMG_winnerRight);
@@ -42,9 +41,9 @@ public class Winner_Activity extends AppCompatActivity {
         String right_score = getIntent().getStringExtra("RIGHT_SCORE");
         rightScore.setText("" + right_score);
         leftScore.setText("" + left_score);
-        if(Integer.valueOf(right_score) > Integer.valueOf(left_score))
+        if (Integer.valueOf(right_score) > Integer.valueOf(left_score))
             winnerRight.setVisibility(View.VISIBLE);
-        else if(Integer.valueOf(right_score) < Integer.valueOf(left_score))
+        else if (Integer.valueOf(right_score) < Integer.valueOf(left_score))
             winnerLeft.setVisibility(View.VISIBLE);
         else
             draw.setVisibility(View.VISIBLE);
@@ -54,26 +53,31 @@ public class Winner_Activity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+        Log.d("lifeCheck", "WinnerActivityOnStart");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
+        Log.d("lifeCheck", "WinnerActivityOnResume");
         super.onResume();
     }
 
     @Override
     protected void onStop() {
+        Log.d("lifeCheck", "WinnerActivityOnStop");
         super.onStop();
     }
 
     @Override
     protected void onDestroy() {
+        Log.d("lifeCheck", "WinnerActivityOnDestroy");
         super.onDestroy();
     }
 
     @Override
     protected void onPause() {
+        Log.d("lifeCheck", "WinnerActivityOnPause");
         super.onPause();
     }
 }

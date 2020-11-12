@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.CardGame">
-        <activity android:name=".Winner_Activity"
+        <activity android:name=".WinnerActivity"
             android:screenOrientation="landscape"></activity>
         <activity
             android:name=".MainActivity"
@@ -22,5 +22,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    
 </manifest>

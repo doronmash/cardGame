@@ -22,6 +22,8 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("lifeCheck", "MainActivityOnCreate");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -40,26 +42,31 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onStart() {
+        Log.d("lifeCheck", "MainActivityOnStart");
         super.onStart();
     }
 
     @Override
     protected void onResume() {
+        Log.d("lifeCheck", "MainActivityOnResume");
         super.onResume();
     }
 
     @Override
     protected void onStop() {
+        Log.d("lifeCheck", "MainActivityOnStop");
         super.onStop();
     }
 
     @Override
     protected void onDestroy() {
+        Log.d("lifeCheck", "MainActivityOnDestroy");
         super.onDestroy();
     }
 
     @Override
     protected void onPause() {
+        Log.d("lifeCheck", "MainActivityOnPause");
         super.onPause();
     }
 
@@ -100,7 +107,7 @@ public class MainActivity extends Activity {
     };
 
     private void openActivity(Activity activity) {
-        Intent myIntent = new Intent(activity, Winner_Activity.class);
+        Intent myIntent = new Intent(activity, WinnerActivity.class);
         myIntent.putExtra("LEFT_SCORE",String.valueOf(leftScore.getText()));
         myIntent.putExtra("RIGHT_SCORE",String.valueOf(rightScore.getText()));
         startActivity(myIntent);
