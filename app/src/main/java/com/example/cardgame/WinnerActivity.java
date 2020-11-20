@@ -87,10 +87,8 @@ public class WinnerActivity extends AppCompatActivity {
         Log.d("lifeCheck", "WinnerActivityOnPause");
         super.onPause();
     }
-    private void openActivity(Activity activity) {
-        Intent myIntent = new Intent(activity, MainActivity.class);
-        myIntent.putExtra("LEFT_SCORE",String.valueOf(leftScore.getText()));
-        myIntent.putExtra("RIGHT_SCORE",String.valueOf(rightScore.getText()));
+    private void openActivity(Class activity) {
+        Intent myIntent = new Intent(WinnerActivity.this, activity);
         startActivity(myIntent);
     }
 
@@ -100,7 +98,7 @@ public class WinnerActivity extends AppCompatActivity {
             switch (v.getId()){
                 case(R.id.game_BTN_playAgine):
                 case(R.id.game_TV_playAgine):
-                    openActivity(WinnerActivity.this);
+                    openActivity(MainActivity.class);
                     break;
             }
         }
