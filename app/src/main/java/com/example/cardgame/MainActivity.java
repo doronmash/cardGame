@@ -2,6 +2,7 @@ package com.example.cardgame;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,8 +30,8 @@ public class MainActivity extends Activity {
 
         play = findViewById(R.id.game_BTN_play);
         play.setOnClickListener(onClickListener);
-        rightScore = findViewById(R.id.game_LBL_scoreLeft);
-        leftScore = findViewById(R.id.game_LBL_scoreRight);
+        rightScore = findViewById(R.id.winner_LBL_scoreRight);
+        leftScore = findViewById(R.id.winner_LBL_scoreLeft);
         leftCardImg = findViewById(R.id.game_IMG_card_1);
         rightCardImg = findViewById(R.id.game_IMG_card_2);
 
@@ -75,9 +76,10 @@ public class MainActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.game_BTN_play:
-                    if (rightPlayerScore + leftPlayerScore + draws == 26)
+                    startSound(R.raw.card_flip, 50);
+                    if (rightPlayerScore + leftPlayerScore + draws == 26) {
                         openActivity(MainActivity.this);
-                    else {
+                    } else {
                         // Get top cards:
                         String[] topCards = cardsDeck.getTopCards();
                         Log.d(CardsDeck.TAG, topCards[0] + " | " + topCards[1]);
@@ -111,6 +113,18 @@ public class MainActivity extends Activity {
         myIntent.putExtra("LEFT_SCORE",String.valueOf(leftScore.getText()));
         myIntent.putExtra("RIGHT_SCORE",String.valueOf(rightScore.getText()));
         startActivity(myIntent);
+    }
+
+
+    private void startSound(int soundFile, int soundOffSet){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MediaPlayer mp = MediaPlayer.create(getApplicationContext(), soundFile);
+                mp.seekTo(soundOffSet);
+                mp.start();
+            }
+        }).start();
     }
 
 }

@@ -2,11 +2,11 @@ package com.example.cardgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +16,8 @@ public class WinnerActivity extends AppCompatActivity {
     private ImageView draw;
     private TextView leftScore;
     private TextView rightScore;
+    private ImageView playAgain;
+    private TextView playAgainTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,10 @@ public class WinnerActivity extends AppCompatActivity {
         rightScore = findViewById(R.id.winner_LBL_scoreRight);
         leftScore = findViewById(R.id.winner_LBL_scoreLeft);
         draw = findViewById(R.id.winner_IMG_draw);
+        playAgain = findViewById(R.id.game_BTN_playAgine);
+        playAgain.setOnClickListener(onClickListener);
+        playAgainTV = findViewById(R.id.game_TV_playAgine);
+        playAgainTV.setOnClickListener(onClickListener);
         winnerRight.setVisibility(View.INVISIBLE);
         winnerLeft.setVisibility(View.INVISIBLE);
         draw.setVisibility(View.INVISIBLE);
@@ -50,6 +56,7 @@ public class WinnerActivity extends AppCompatActivity {
 
 
     }
+
 
     @Override
     protected void onStart() {
@@ -80,4 +87,23 @@ public class WinnerActivity extends AppCompatActivity {
         Log.d("lifeCheck", "WinnerActivityOnPause");
         super.onPause();
     }
+    private void openActivity(Activity activity) {
+        Intent myIntent = new Intent(activity, MainActivity.class);
+        myIntent.putExtra("LEFT_SCORE",String.valueOf(leftScore.getText()));
+        myIntent.putExtra("RIGHT_SCORE",String.valueOf(rightScore.getText()));
+        startActivity(myIntent);
+    }
+
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case(R.id.game_BTN_playAgine):
+                case(R.id.game_TV_playAgine):
+                    openActivity(WinnerActivity.this);
+                    break;
+            }
+        }
+    };
+
 }

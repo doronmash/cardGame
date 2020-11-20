@@ -76,7 +76,7 @@
         android:gravity="bottom">
 
         <TextView
-            android:id="@+id/game_LBL_scoreRight"
+            android:id="@+id/winner_LBL_scoreLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
@@ -84,7 +84,7 @@
             android:layout_weight="0.5"/>
 
         <TextView
-            android:id="@+id/game_LBL_scoreLeft"
+            android:id="@+id/winner_LBL_scoreRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
