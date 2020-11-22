@@ -113,6 +113,7 @@ public class MainActivity extends Activity {
         myIntent.putExtra("LEFT_SCORE",String.valueOf(leftScore.getText()));
         myIntent.putExtra("RIGHT_SCORE",String.valueOf(rightScore.getText()));
         startActivity(myIntent);
+        finish();
     }
 
 

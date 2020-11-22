@@ -2,7 +2,6 @@ package com.example.cardgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -35,9 +34,9 @@ public class WinnerActivity extends AppCompatActivity {
         rightScore = findViewById(R.id.winner_LBL_scoreRight);
         leftScore = findViewById(R.id.winner_LBL_scoreLeft);
         draw = findViewById(R.id.winner_IMG_draw);
-        playAgain = findViewById(R.id.game_BTN_playAgine);
+        playAgain = findViewById(R.id.game_BTN_playAgain);
         playAgain.setOnClickListener(onClickListener);
-        playAgainTV = findViewById(R.id.game_TV_playAgine);
+        playAgainTV = findViewById(R.id.game_LBL_playAgain);
         playAgainTV.setOnClickListener(onClickListener);
         winnerRight.setVisibility(View.INVISIBLE);
         winnerLeft.setVisibility(View.INVISIBLE);
@@ -96,8 +95,9 @@ public class WinnerActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case(R.id.game_BTN_playAgine):
-                case(R.id.game_TV_playAgine):
+                case(R.id.game_BTN_playAgain):
+                case(R.id.game_LBL_playAgain):
+                    finish();
                     openActivity(MainActivity.class);
                     break;
             }
